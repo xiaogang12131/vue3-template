@@ -7,7 +7,7 @@ module.exports = {
       'always',
       [
         'build', // 修改项目构建系统
-        'ci', // 是修改项目继续集成流程
+        'ci', // 修改项目继续集成流程
         'docs', // 文档更新
         'feat', // 新增功能
         'fix', // bug 修复
