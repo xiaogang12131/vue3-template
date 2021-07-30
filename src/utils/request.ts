@@ -3,7 +3,6 @@ import service from '@/utils/axios'
 
 interface BaseResponse<T> {
   code: number
-  status: boolean
   data: T
   message?: string
 }
