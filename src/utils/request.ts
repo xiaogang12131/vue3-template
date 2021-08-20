@@ -1,5 +1,5 @@
 import { AxiosRequestConfig } from 'axios'
-import service from '@/utils/axios'
+import service from 'utils/axios'
 
 interface BaseResponse<T> {
   code: number

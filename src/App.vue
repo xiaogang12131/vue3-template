@@ -7,15 +7,28 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from 'vue'
-import { getTableData } from '@/api/table'
+import { defineComponent, computed, watch, watchEffect, onMounted } from 'vue'
+import { useStore } from 'store'
+import { getTableData } from 'api/table'
 
 export default defineComponent({
   setup() {
+    const store = useStore()
+    const token = computed(() => store.state.user.token)
+
     const laodTableData = async () => {
       const res = await getTableData()
       console.log(res)
     }
+
+    watch(token, token => {
+      console.log(token)
+    })
+
+    watchEffect(() => {
+      console.log(token.value)
+    })
+
     onMounted(() => {
       laodTableData()
     })

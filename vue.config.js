@@ -4,6 +4,9 @@ const resolve = dir => path.join(__dirname, dir)
 // const isDev = process.env.NODE_ENV === 'development'
 
 module.exports = {
+  publicPath: '/',
+  outputDir: 'dist',
+  assetsDir: 'static',
   devServer: {
     port: 8000
   },
@@ -11,7 +14,17 @@ module.exports = {
   chainWebpack: config => {
     config.plugins.delete('preload')
     config.plugins.delete('prefetch')
-    config.resolve.alias.set('@', resolve('src'))
+
+    config.resolve.alias
+      .set('@', resolve('src'))
+      .set('api', resolve('src/api'))
+      .set('assets', resolve('src/assets'))
+      .set('components', resolve('src/components'))
+      .set('store', resolve('src/store'))
+      .set('hooks', resolve('src/hooks'))
+      .set('utils', resolve('src/utils'))
+      .set('views', resolve('src/views'))
+      .end()
 
     // config.plugin('define').tap((args) => {
     //   const { mode, country } = process.env
@@ -24,18 +37,18 @@ module.exports = {
     //   return args
     // })
 
-    // config.module.rules.delete("svg");
-    // config.module
-    //   .rule("svg-sprite-loader")
-    //   .test(/\.svg$/)
-    //   .include.add(resolve("src/icons"))
-    //   .end()
-    //   .use("svg-sprite-loader")
-    //   .loader("svg-sprite-loader")
-    //   .options({
-    //     symbolId: "icon-[name]",
-    //   })
-    //   .end();
+    config.module.rule('svg').exclude.add(resolve('src/assets/icons')).end()
+    config.module
+      .rule('icons')
+      .test(/\.svg$/)
+      .include.add(resolve('src/assets/icons'))
+      .end()
+      .use('svg-sprite-loader')
+      .loader('svg-sprite-loader')
+      .options({
+        symbolId: 'icon-[name]'
+      })
+      .end()
   },
   configureWebpack: () => {
     // if (isDev) {

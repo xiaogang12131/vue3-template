@@ -1,14 +1,8 @@
 import { GetterTree } from 'vuex'
-import { State as TestState } from './modules/test/types/state-types'
+import { RootState } from './types'
 
-export interface State {
-  test: TestState
-  // ...
-}
-
-const getters: GetterTree<State, State> = {
-  getToken: state => state.test.token
-  // ...
+const getters: GetterTree<RootState, RootState> = {
+  getToken: state => state.user.token
 }
 
 export default getters

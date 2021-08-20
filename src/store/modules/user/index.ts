@@ -1,15 +1,15 @@
 import { MutationTree, ActionTree } from 'vuex'
 
-import { State } from './types/state-types'
-import { Mutations, Mutation } from './types/mutation-types'
-import { Actions } from './types/action-types'
+import { State } from './state-types'
+import { Mutation } from './mutation-types'
+import { RootState } from '../../types'
 
 export const state: State = {
   token: '',
   userInfo: {}
 }
 
-const mutations: MutationTree<State> & Mutations = {
+const mutations: MutationTree<State> = {
   [Mutation.SET_TOKEN](state, token) {
     state.token = token
   },
@@ -18,9 +18,9 @@ const mutations: MutationTree<State> & Mutations = {
   }
 }
 
-const actions: ActionTree<State, State> & Actions = {
+const actions: ActionTree<State, RootState> = {
   getUserInfo({ commit }) {
-    return new Promise(resolve => {
+    return new Promise<void>(resolve => {
       commit(Mutation.SET_USER_INFO)
       resolve()
     })
