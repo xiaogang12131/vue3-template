@@ -14,6 +14,6 @@ import '@/styles/index.scss'
 createApp(App)
   .use(store, key)
   .use(router)
-  .use(ElementPlus)
+  .use(ElementPlus, { size: 'small' })
   .use(components)
   .mount('#app')

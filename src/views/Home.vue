@@ -1,13 +1,17 @@
 <template>
   <div class="home">
     <h1>This is an home page</h1>
+    <el-divider></el-divider>
     <svg-icon icon="star" @click="handleClick" />
+    <el-divider></el-divider>
+    <el-button type="primary" @click="handleMessage">打开消息提示</el-button>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useStore } from 'store'
+import Message from '@/components/Message'
 
 export default defineComponent({
   name: 'Home',
@@ -19,8 +23,14 @@ export default defineComponent({
     const handleClick = () => {
       store.commit('user/SET_TOKEN', num++)
     }
+
+    const handleMessage = () => {
+      Message('提示信息')
+    }
+
     return {
-      handleClick
+      handleClick,
+      handleMessage
     }
   }
 })

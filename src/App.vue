@@ -17,14 +17,13 @@ export default defineComponent({
     const token = computed(() => store.state.user.token)
 
     const laodTableData = async () => {
-      const res = await getTableData()
-      console.log(res)
+      await getTableData()
     }
 
-    watch(token, token => {
-      console.log(token)
+    // watch | watchEffect
+    watch(token, (token, prevToken) => {
+      console.log(token, prevToken)
     })
-
     watchEffect(() => {
       console.log(token.value)
     })
