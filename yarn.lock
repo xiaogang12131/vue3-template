@@ -1033,6 +1033,30 @@
   dependencies:
     chalk "^4.0.0"
 
+"@grapecity/spread-excelio@14.0.1":
+  version "14.0.1"
+  resolved "https://registry.nlark.com/@grapecity/spread-excelio/download/@grapecity/spread-excelio-14.0.1.tgz#c4f8dc20d37ae6f71db56aaaaf350558237b86fb"
+  integrity sha1-xPjcINN65vcdtWqqrzUFWCN7hvs=
+  dependencies:
+    "@grapecity/spread-sheets" "14.0.1"
+
+"@grapecity/spread-sheets-resources-zh@^14.1.6":
+  version "14.1.6"
+  resolved "https://registry.nlark.com/@grapecity/spread-sheets-resources-zh/download/@grapecity/spread-sheets-resources-zh-14.1.6.tgz#bd148a4408680872ef97ce270e0a65128d5725a6"
+  integrity sha1-vRSKRAhoCHLvl84nDgplEo1XJaY=
+  dependencies:
+    "@grapecity/spread-sheets" "14.1.6"
+
+"@grapecity/spread-sheets@14.0.1":
+  version "14.0.1"
+  resolved "https://registry.nlark.com/@grapecity/spread-sheets/download/@grapecity/spread-sheets-14.0.1.tgz#db42f25fd0904cdedbf76aedf075269c7ed958f4"
+  integrity sha1-20LyX9CQTN7b92rt8HUmnH7ZWPQ=
+
+"@grapecity/spread-sheets@14.1.6", "@grapecity/spread-sheets@^14.1.6":
+  version "14.1.6"
+  resolved "https://registry.nlark.com/@grapecity/spread-sheets/download/@grapecity/spread-sheets-14.1.6.tgz#3dd36ef0beb71a21df5fa65f836d72e0cf197457"
+  integrity sha1-PdNu8L63GiHfX6Zfg21y4M8ZdFc=
+
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.npm.taobao.org/@hapi/address/download/@hapi/address-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"
