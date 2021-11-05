@@ -1,24 +1,26 @@
 # vue3-template
 
-## Project setup
+### 安装依赖
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### 启动项目
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
+### 打包生产环境
 ```
 yarn build
 ```
 
-### Lints and fixes files
+### 代码格式化
 ```
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 生成项目目录结构
+```
+yarn md
+```

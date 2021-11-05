@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "md": "node node_modules/mddir/src/mddir"
   },
   "dependencies": {
     "@grapecity/spread-excelio": "14.0.1",

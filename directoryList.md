@@ -26,6 +26,7 @@
         |       |-- index.ts
         |       |-- star.svg
         |-- components
+        |   |-- VirtualList.vue
         |   |-- index.ts
         |   |-- types.ts
         |   |-- Dropdown
@@ -68,3 +69,4 @@
             |-- about.vue
             |-- home.vue
             |-- spread-sheet.vue
+            |-- virtual-data.vue
