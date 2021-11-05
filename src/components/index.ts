@@ -1,3 +1,4 @@
+// 全局组件注册
 import { App } from 'vue'
 
 import SvgIcon from './SvgIcon'

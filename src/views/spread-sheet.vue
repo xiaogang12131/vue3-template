@@ -27,7 +27,7 @@ import '@grapecity/spread-sheets-resources-zh'
 GC.Spread.Common.CultureManager.culture('zh-cn')
 
 export default defineComponent({
-  name: 'SpreadSheets',
+  name: 'SpreadSheet',
   props: {},
   setup() {
     let spread, excelIO
