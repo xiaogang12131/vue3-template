@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, onMounted } from 'vue'
-import VirtualList from '@/components/VirtualList.vue'
+import VirtualList from '@/components/VirtualList/index.vue'
 
 export default defineComponent({
   name: 'VirtualData',
