@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import { store, key } from './store'
 import components from './components'
+import './components/CustomElement'
 import './assets/icons'
 import './mock'
 

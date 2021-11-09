@@ -49,6 +49,17 @@ module.exports = {
         symbolId: 'icon-[name]'
       })
       .end()
+
+    config.module
+      .rule('vue')
+      .use('vue-loader')
+      .tap(options => ({
+        ...options,
+        compilerOptions: {
+          // 将所有以 my- 开头的标签作为自定义元素处理
+          isCustomElement: tag => tag.startsWith('my-')
+        }
+      }))
   },
   configureWebpack: () => {
     // if (isDev) {

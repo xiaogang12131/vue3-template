@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <h1>This is an home page</h1>
     <el-divider></el-divider>
     <svg-icon icon="star" @click="handleClick" />
     <el-divider></el-divider>
@@ -35,3 +34,9 @@ export default defineComponent({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+.home {
+  text-align: center;
+}
+</style>

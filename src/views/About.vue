@@ -1,6 +1,11 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <my-vue-element
+      msg="This is a button"
+      :selected="false"
+      index="1000"
+      @message="showMessage"
+    />
   </div>
 </template>
 
@@ -10,7 +15,19 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'About',
   setup() {
-    return {}
+    const showMessage = (data: string) => {
+      console.log(data)
+    }
+
+    return {
+      showMessage
+    }
   }
 })
 </script>
+
+<style lang="scss" scoped>
+.about {
+  text-align: center;
+}
+</style>
