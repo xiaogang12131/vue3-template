@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="custom">
     <my-vue-element
       msg="This is a button"
       selected
@@ -27,7 +27,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.about {
+.custom {
   text-align: center;
 }
 </style>
