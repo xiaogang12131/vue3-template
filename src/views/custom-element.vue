@@ -13,7 +13,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'About',
+  name: 'CustomElement',
   setup() {
     const showMessage = (data: string) => {
       console.log(data)
