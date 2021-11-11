@@ -9,6 +9,7 @@
     "md": "node node_modules/mddir/src/mddir"
   },
   "dependencies": {
+    "@element-plus/icons": "^0.0.11",
     "@grapecity/spread-excelio": "14.0.1",
     "@grapecity/spread-sheets": "^14.1.6",
     "@grapecity/spread-sheets-resources-zh": "^14.1.6",
