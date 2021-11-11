@@ -10,7 +10,11 @@ const MyVueElement = defineCustomElement({
   styles: [
     `
     .btn { 
-      font-size: 24px;
+      min-height: 32px;
+      padding: 9px 15px;
+      outline: none;
+      border: none;
+      -webkit-appearance: none;
     }
     `
   ],
