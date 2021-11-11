@@ -87,7 +87,7 @@ export default defineComponent({
 .spread {
   display: flex;
   flex-direction: column;
-  height: calc(100% - 20px);
+  height: 100%;
   &-body {
     flex: 1;
     display: flex;

@@ -1,11 +1,15 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/spread-sheet">SpreedSheet</router-link> |
-    <router-link to="/virtual-data">VirtualData</router-link>
+  <div class="wrapper">
+    <div class="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link> |
+      <router-link to="/spread-sheet">SpreedSheet</router-link> |
+      <router-link to="/virtual-data">VirtualData</router-link>
+    </div>
+    <div class="container">
+      <router-view />
+    </div>
   </div>
-  <router-view />
 </template>
 
 <script lang="ts">
@@ -36,3 +40,16 @@ export default defineComponent({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+.wrapper {
+  height: 100%;
+  .nav {
+    line-height: 40px;
+  }
+  .container {
+    height: calc(100% - 40px);
+    padding: 20px;
+  }
+}
+</style>

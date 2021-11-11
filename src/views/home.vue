@@ -1,8 +1,7 @@
 <template>
   <div class="home">
-    <el-divider></el-divider>
     <svg-icon icon="star" @click="handleClick" />
-    <el-divider></el-divider>
+    <el-divider />
     <el-button type="primary" @click="handleMessage">打开消息提示</el-button>
   </div>
 </template>

@@ -2,7 +2,7 @@
   <div class="about">
     <my-vue-element
       msg="This is a button"
-      :selected="false"
+      selected
       index="1000"
       @message="showMessage"
     />
