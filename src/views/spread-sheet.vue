@@ -18,7 +18,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent, ref, onMounted } from 'vue'
 import '@grapecity/spread-sheets/styles/gc.spread.sheets.excel2013white.css'
 import GC from '@grapecity/spread-sheets'
@@ -30,7 +30,8 @@ export default defineComponent({
   name: 'SpreadSheet',
   props: {},
   setup() {
-    let spread, excelIO
+    let spread: GC.Spread.Sheets.Workbook
+    let excelIO: ExcelIO.IO
     const spreadBar = ref()
     const spreadSheet = ref()
 
@@ -61,8 +62,8 @@ export default defineComponent({
       sheet.options.isProtected = true
     }
 
-    const handleChange = file => {
-      excelIO.open(file.raw, spreadJSON => {
+    const handleChange = (file: { raw: any }) => {
+      excelIO.open(file.raw, (spreadJSON: any) => {
         if (spread) {
           spread.fromJSON(spreadJSON)
           setSpreadProject()
