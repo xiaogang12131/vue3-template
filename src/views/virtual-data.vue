@@ -19,7 +19,7 @@ export default defineComponent({
     onMounted(() => {
       for (let i = 0; i < 10000; i++) {
         const num = i + 1
-        listData.value.push({ name: '我是第' + num + '个' })
+        listData.value.push(num)
       }
     })
 

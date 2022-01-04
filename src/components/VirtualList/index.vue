@@ -1,5 +1,5 @@
 <template>
-  <div ref="listRef" class="virtual-list" @scroll="scrollEvent($event)">
+  <div ref="listRef" class="virtual-list" @scroll="scrollEvent">
     <div class="virtual-list-body" :style="{ height: listHeight + 'px' }">
       <div class="virtual-list-content" :style="{ transform: getTransform }">
         <div
@@ -16,7 +16,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import {
   defineComponent,
   ref,
@@ -122,7 +122,7 @@ export default defineComponent({
   overflow: auto;
   position: relative;
   -webkit-overflow-scrolling: touch;
-  border: 1px solid #000000;
+  border: 1px solid #e6e6e6;
   &-content {
     text-align: center;
   }
