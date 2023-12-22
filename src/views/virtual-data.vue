@@ -1,6 +1,11 @@
 <template>
   <div class="virtual">
-    <virtual-list :list-data="listData" :item-size="20"></virtual-list>
+    <virtual-list :list-data="listData" :item-size="20">
+      <template #default="{ item }">
+        {{ item }}
+        <input type="checkbox" v-model="item.id" />
+      </template>
+    </virtual-list>
   </div>
 </template>
 
@@ -19,7 +24,7 @@ export default defineComponent({
     onMounted(() => {
       for (let i = 0; i < 10000; i++) {
         const num = i + 1
-        listData.value.push(num)
+        listData.value.push({ id: num })
       }
     })
 

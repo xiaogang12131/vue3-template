@@ -1,5 +1,6 @@
 <template>
   <div class="custom">
+    <button class="btn">ceshi</button>
     <my-vue-element
       msg="This is a button"
       selected
@@ -10,6 +11,7 @@
 </template>
 
 <script lang="ts">
+sessionStorage.setItem('name', '<NAME>')
 import { defineComponent } from 'vue'
 
 export default defineComponent({
@@ -26,8 +28,11 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .custom {
   text-align: center;
+}
+.btn {
+  background: red;
 }
 </style>

@@ -9,6 +9,7 @@
           :key="item.id"
           :style="{ height: itemSize + 'px', lineHeight: itemSize + 'px' }"
         >
+          <slot :item="item" />
           {{ item }}
         </div>
       </div>

@@ -1,41 +1,35 @@
 <template>
-  <div class="home">
-    <svg-icon icon="star" @click="handleClick" />
-    <el-divider />
-    <el-button type="primary" @click="handleMessage">打开消息提示</el-button>
-  </div>
+  <ScrollComponent :on-reach-top="handleReachTop">
+    <Card
+      dis-hover
+      v-for="(item, index) in list"
+      :key="index"
+      style="margin: 32px 0"
+    >
+      Content {{ item }}
+    </Card>
+  </ScrollComponent>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-import { useStore } from 'store'
-import Message from '@/components/Message'
+<script lang="ts" setup>
+import { ref } from 'vue'
+import ScrollComponent from 'view-ui-plus/src/components/scroll'
 
-export default defineComponent({
-  name: 'Home',
-  setup() {
-    const store = useStore()
+const list = ref([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
-    let num = 1
+const handleReachTop = () => {
+  console.log('滚动')
 
-    const handleClick = () => {
-      store.commit('user/SET_TOKEN', num++)
-    }
-
-    const handleMessage = () => {
-      Message('提示信息')
-    }
-
-    return {
-      handleClick,
-      handleMessage
-    }
-  }
-})
+  return new Promise(resolve => {
+    setTimeout(() => {
+      const first = list.value[0]
+      for (let i = 1; i < 11; i++) {
+        list.value.unshift(first - i)
+      }
+      resolve('')
+    }, 500)
+  })
+}
 </script>
 
-<style lang="scss" scoped>
-.home {
-  text-align: center;
-}
-</style>
+<style lang="less" scoped></style>
