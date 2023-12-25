@@ -95,6 +95,12 @@ module.exports = {
     loaderOptions: {
       sass: {
         prependData: `@import "~@/styles/variables.scss";`
+      },
+      less: {
+        lessOptions: {
+          javascriptEnabled: true,
+          math: 'always'
+        }
       }
     }
   }
