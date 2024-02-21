@@ -5,7 +5,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
-    component: () => import('views/mobile-table.vue')
+    component: () => import('views/quill-editor.vue')
   },
   {
     path: '/custom-element',
@@ -27,6 +27,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/virtual-data',
     name: 'VirtualData',
     component: () => import('views/virtual-data.vue')
+  },
+  {
+    path: '/quill-editor',
+    name: 'QuillEditor',
+    component: () => import('views/quill-editor.vue')
   }
 ]
 

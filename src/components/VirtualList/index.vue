@@ -47,7 +47,6 @@ export default defineComponent({
     }
   },
   setup(props) {
-    console.log(props)
     // 组件状态
     const listRef = ref()
     const state = reactive({
@@ -90,18 +89,22 @@ export default defineComponent({
     // 列表滚动
     const scrollEvent = () => {
       // 当前滚动位置
-      let scrollTop = listRef.value.scrollTop
+      const scrollTop = listRef.value.scrollTop
       // 此时的开始索引
       state.start = Math.floor(scrollTop / props.itemSize)
       // 此时的结束索引
       state.end = state.start + visibleCount.value
       // 此时的偏移量
-      state.startOffset = scrollTop - (scrollTop % props.itemSize)
+      state.startOffset =
+        state.start > aboveCount.value
+          ? scrollTop -
+            (scrollTop % props.itemSize) -
+            aboveCount.value * props.itemSize
+          : 0
     }
 
     onMounted(() => {
       state.screenHeight = listRef.value.clientHeight
-      state.start = 0
       state.end = state.start + visibleCount.value
     })
 
@@ -111,6 +114,8 @@ export default defineComponent({
       listHeight,
       getTransform,
       visibleData,
+      aboveCount,
+      belowCount,
       scrollEvent
     }
   }

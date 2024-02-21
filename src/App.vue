@@ -10,6 +10,7 @@
           <el-menu-item index="/custom-element">CustomElement</el-menu-item>
           <el-menu-item index="/spread-sheet">SpreedSheet</el-menu-item>
           <el-menu-item index="/virtual-data">VirtualData</el-menu-item>
+          <el-menu-item index="/quill-editor">QuillEditor</el-menu-item>
         </el-sub-menu>
       </el-menu>
     </el-aside>
