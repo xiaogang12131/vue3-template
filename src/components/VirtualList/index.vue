@@ -5,12 +5,11 @@
         <div
           ref="items"
           class="virtual-list-item"
-          v-for="item in visibleData"
-          :key="item.id"
+          v-for="(item, index) in visibleData"
+          :key="key ? item[key] : index"
           :style="{ height: itemSize + 'px', lineHeight: itemSize + 'px' }"
         >
-          <slot :item="item" />
-          {{ item }}
+          <slot :index="index" :item="item" />
         </div>
       </div>
     </div>
@@ -38,12 +37,16 @@ export default defineComponent({
     //每项高度
     itemSize: {
       type: Number,
-      default: 200
+      default: 20
     },
     //缓冲区比例
     bufferScale: {
       type: Number,
       default: 1
+    },
+    key: {
+      type: [String],
+      default: ''
     }
   },
   setup(props) {
@@ -83,7 +86,7 @@ export default defineComponent({
     })
     // 偏移量对应的style
     const getTransform = computed(() => {
-      return `translate3d(0,${state.startOffset}px,0)`
+      return `translate3d(0, ${state.startOffset}px, 0)`
     })
 
     // 列表滚动
@@ -114,8 +117,6 @@ export default defineComponent({
       listHeight,
       getTransform,
       visibleData,
-      aboveCount,
-      belowCount,
       scrollEvent
     }
   }

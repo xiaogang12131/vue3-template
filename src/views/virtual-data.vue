@@ -1,8 +1,8 @@
 <template>
   <div class="virtual">
     <virtual-list :list-data="listData" :item-size="20">
-      <template #default="{ item }">
-        {{ item }}
+      <template #default="{ index, item }">
+        {{ index }} >>>>>> {{ item }}
         <input type="checkbox" v-model="item.id" />
       </template>
     </virtual-list>
@@ -37,6 +37,6 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .virtual {
-  height: 200px;
+  height: 500px;
 }
 </style>
