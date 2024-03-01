@@ -1,5 +1,6 @@
 <template>
   <div class="virtual">
+    <h1>total: {{ listData.length }}</h1>
     <virtual-list :list-data="listData" :item-size="20">
       <template #default="{ index, item }">
         {{ index }} >>>>>> {{ item }}
@@ -22,10 +23,12 @@ export default defineComponent({
     const listData = ref<any>([])
 
     onMounted(() => {
-      for (let i = 0; i < 10000; i++) {
+      console.time('init')
+      for (let i = 0; i < 100000; i++) {
         const num = i + 1
         listData.value.push({ id: num })
       }
+      console.timeEnd('init')
     })
 
     return {
