@@ -11,6 +11,7 @@
           <el-menu-item index="/spread-sheet">SpreedSheet</el-menu-item>
           <el-menu-item index="/virtual-data">VirtualData</el-menu-item>
           <el-menu-item index="/quill-editor">QuillEditor</el-menu-item>
+          <el-menu-item index="/comment">Comment</el-menu-item>
         </el-sub-menu>
       </el-menu>
     </el-aside>
@@ -58,7 +59,7 @@ export default defineComponent({
       console.log(token, prevToken)
     })
     watchEffect(() => {
-      console.log(token.value)
+      // console.log(token.value)
     })
 
     onMounted(() => {

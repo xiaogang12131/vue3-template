@@ -5,7 +5,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
-    component: () => import('views/quill-editor/index.vue')
+    component: () => import('views/comment.vue')
   },
   {
     path: '/custom-element',
@@ -32,6 +32,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/quill-editor',
     name: 'QuillEditor',
     component: () => import('views/quill-editor/index.vue')
+  },
+  {
+    path: '/comment',
+    name: 'Comment',
+    component: () => import('views/comment.vue')
   }
 ]
 

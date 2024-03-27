@@ -15,12 +15,10 @@ import 'view-ui-plus/dist/styles/viewuiplus.css'
 
 import '@/styles/index.scss'
 
-const a = createApp(App)
+createApp(App)
   .use(store, key)
   .use(router)
   .use(ElementPlus, { size: 'small' })
   .use(components)
   .use(ViewUIPlus)
   .mount('#app')
-
-console.log(a)

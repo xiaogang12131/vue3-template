@@ -47,8 +47,6 @@ const MyVueElement = defineCustomElement({
   }
 })
 
-console.dir(MyVueElement)
-
 // 注册自定义元素.
 // 注册后，页面上所有的 `<my-vue-element>` 标签都会更新
 customElements.define('my-vue-element', MyVueElement)
